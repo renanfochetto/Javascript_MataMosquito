@@ -1,0 +1,154 @@
+
+/* Definição Geral */
+
+:root {
+    --cor-principal: #fc9500;
+    --cor-secundaria: #40a6ce;
+    --cor-detalhe: #fff;
+    --cor-sombra: #000;
+    --border-radius : 0.75em;
+}
+
+html {
+    cursor: url(imagens/mata_mosca.png) 30 30, auto;
+}
+
+body {
+    font-family: cursive;
+    background-image: url(./imagens/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-weight: 700;
+    font-size: 1.25em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* --------------------------------------------------------------------------------------------------------------
+
+Seleção de Nível e Botão */
+
+.container__selecao {
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 0 1px var(--cor-sombra);
+    border: 2px solid var(--cor-detalhe);
+    margin: 1em 1em 1.5em 1em;
+}
+
+.nivel__input {
+    display: none;
+}
+
+.nivel__label, .botao {
+    cursor: pointer;
+    background: var(--cor-principal);
+    color: var(--cor-sombra);
+    letter-spacing: 1.5px;
+}
+
+.nivel__label {
+    text-align: center;
+    width: 9em;
+    padding: 0.4em 0.8em;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.nivel__label:not(:last-of-type) {
+    border-right: 2px solid var(--cor-detalhe);
+}
+
+.nivel__input:checked + .nivel__label {
+    background: var(--cor-secundaria);
+    color: var(--cor-detalhe);
+}
+
+.botao {
+    border: 2px solid var(--cor-detalhe);
+    padding: 0.6em 1.2em;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    border-radius: var(--border-radius);
+    background-color: var(--cor-principal);
+    box-shadow: 0 1px 0 1px var(--cor-sombra);
+    font-size: 1.1em;
+    font-weight: bolder;
+}
+
+.botao:hover {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-detalhe);
+    box-shadow: 0 2px 0 2px #0d3b66;
+}
+
+.botao:active {
+    transform: scale(0.9);
+}
+
+.reiniciar {
+    background: #FF66CC;
+    color: var(--cor-detalhe);
+}
+
+/* --------------------------------------------------------------------------------------------------------------
+
+Configuração Mosquitos */ 
+
+.mosquito1 {
+    height: 5em;
+    width: 5em;
+}
+
+.mosquito2 {
+    height: 6.25em;
+    width: 6.25em;
+}
+
+.mosquito3 {
+    height: 7.5em;
+    width: 7.5em;
+}
+
+.ladoA {
+    transform: scaleX(1);
+}
+
+.ladoB {
+    transform: scaleX(-1);
+}
+
+/* --------------------------------------------------------------------------------------------------------------
+
+Painel */
+
+.painel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 12em;
+    padding: 0.9em 0.6em;
+    left: 2em;
+    bottom: 2em;
+    border: 2px solid var(--cor-detalhe);
+    background-color: var(--cor-detalhe);
+    opacity: 0.7;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 0 2px var(--cor-sombra);
+}
+
+.vidas {
+    display: flex;
+    gap: 1.75em;
+    margin: 0.5em 0;
+}
+
